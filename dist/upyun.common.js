@@ -163,7 +163,7 @@ function formUpload(remoteUrl, localFile, _ref) {
 }
 
 var name = "upyun";
-var version = "3.3.3";
+var version = "3.3.4";
 var description = "UPYUN js sdk";
 var main = "dist/upyun.common.js";
 var module$1 = "dist/upyun.esm.js";
@@ -250,7 +250,8 @@ function genSign(service, options) {
  * @param {object} - other optional params @see http://docs.upyun.com/api/form_api/#_2
  */
 function getPolicyAndAuthorization(service, params) {
-  params['service'] = service.serviceName;
+  console.log(service);
+  params['bucket'] = service.serviceName;
   if (typeof params['save-key'] === 'undefined') {
     throw new Error('upyun - calclate body sign need save-key');
   }
