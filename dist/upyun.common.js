@@ -250,7 +250,6 @@ function genSign(service, options) {
  * @param {object} - other optional params @see http://docs.upyun.com/api/form_api/#_2
  */
 function getPolicyAndAuthorization(service, params) {
-  console.log(service);
   params['bucket'] = service.serviceName;
   if (typeof params['save-key'] === 'undefined') {
     throw new Error('upyun - calclate body sign need save-key');
